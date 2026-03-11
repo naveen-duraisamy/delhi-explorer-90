@@ -1,14 +1,21 @@
+import Header from "@/components/Header";
+import HeroBanner from "@/components/HeroBanner";
+import AttractionsSlider from "@/components/AttractionsSlider";
+import FoodCards from "@/components/FoodCards";
+import DelhiFacts from "@/components/DelhiFacts";
+import Footer from "@/components/Footer";
+
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center space-y-4">
-        <h1 className="text-5xl font-bold font-display text-foreground">
-          Delhi Tourism
-        </h1>
-        <p className="text-xl text-muted-foreground font-body">
-          Discover the heart of India
-        </p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <HeroBanner />
+        <AttractionsSlider />
+        <FoodCards />
+        <DelhiFacts />
+      </main>
+      <Footer />
     </div>
   );
 };
