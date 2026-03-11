@@ -1,0 +1,55 @@
+$schema: 'https://git.drupalcode.org/project/drupal_canvas/-/raw/0.x/packages/drupal_canvas/component.schema.json'
+machineName: header_nav
+name: Header Navigation
+status: stable
+props:
+  type: object
+  properties:
+    brandName:
+      type: string
+      title: Brand Name
+    headingFontFamily:
+      type: string
+      title: Heading Font Family
+    bodyFontFamily:
+      type: string
+      title: Body Font Family
+    brandColor:
+      type: string
+      title: Brand Color
+    navLinkColor:
+      type: string
+      title: Nav Link Color
+    navLinkHoverColor:
+      type: string
+      title: Nav Link Hover Color
+    backgroundColor:
+      type: string
+      title: Background Color
+    borderColor:
+      type: string
+      title: Border Color
+    navItem1Label:
+      type: string
+      title: Nav Item 1 Label
+    navItem1Href:
+      type: string
+      title: Nav Item 1 Href
+    navItem2Label:
+      type: string
+      title: Nav Item 2 Label
+    navItem2Href:
+      type: string
+      title: Nav Item 2 Href
+    navItem3Label:
+      type: string
+      title: Nav Item 3 Label
+    navItem3Href:
+      type: string
+      title: Nav Item 3 Href
+    headerHeight:
+      type: string
+      title: Header Height
+    brandLetterSpacing:
+      type: string
+      title: Brand Letter Spacing

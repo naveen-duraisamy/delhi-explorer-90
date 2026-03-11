@@ -1,0 +1,8 @@
+.dc-footer-nav {
+  box-sizing: border-box;
+}
+.dc-footer-nav * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
