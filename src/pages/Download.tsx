@@ -1,7 +1,7 @@
 import { useState } from "react";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
-import { Download, Check, Package, FileCode, FileText, Palette } from "lucide-react";
+import { Download as DownloadIcon, Check, Package, FileCode, FileText, Palette } from "lucide-react";
 
 // ── File contents for each DC component ──────────────────────────────
 // We inline them so the page is self-contained and always in sync.
