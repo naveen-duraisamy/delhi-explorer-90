@@ -1,0 +1,83 @@
+$schema: 'https://git.drupalcode.org/project/drupal_canvas/-/raw/0.x/packages/drupal_canvas/component.schema.json'
+machineName: delhi_facts
+name: Delhi Facts
+status: stable
+props:
+  type: object
+  properties:
+    sectionId:
+      type: string
+      title: Section Id
+    sectionTagline:
+      type: string
+      title: Section Tagline
+    sectionHeading:
+      type: string
+      title: Section Heading
+    backgroundImage:
+      type: object
+      $ref: 'json-schema-definitions://canvas.module/image'
+      title: Background Image
+    backgroundImageAlt:
+      type: string
+      title: Background Image Alt
+    headingFontFamily:
+      type: string
+      title: Heading Font Family
+    bodyFontFamily:
+      type: string
+      title: Body Font Family
+    taglineColor:
+      type: string
+      title: Tagline Color
+    headingColor:
+      type: string
+      title: Heading Color
+    descriptionColor:
+      type: string
+      title: Description Color
+    numberColor:
+      type: string
+      title: Number Color
+    overlayColor:
+      type: string
+      title: Overlay Color
+    sectionHeight:
+      type: string
+      title: Section Height
+    fact1Number:
+      type: string
+      title: Fact 1 Number
+    fact1Title:
+      type: string
+      title: Fact 1 Title
+    fact1Text:
+      type: string
+      title: Fact 1 Text
+    fact2Number:
+      type: string
+      title: Fact 2 Number
+    fact2Title:
+      type: string
+      title: Fact 2 Title
+    fact2Text:
+      type: string
+      title: Fact 2 Text
+    fact3Number:
+      type: string
+      title: Fact 3 Number
+    fact3Title:
+      type: string
+      title: Fact 3 Title
+    fact3Text:
+      type: string
+      title: Fact 3 Text
+    fact4Number:
+      type: string
+      title: Fact 4 Number
+    fact4Title:
+      type: string
+      title: Fact 4 Title
+    fact4Text:
+      type: string
+      title: Fact 4 Text

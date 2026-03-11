@@ -1,0 +1,64 @@
+$schema: 'https://git.drupalcode.org/project/drupal_canvas/-/raw/0.x/packages/drupal_canvas/component.schema.json'
+machineName: footer_nav
+name: Footer Navigation
+status: stable
+props:
+  type: object
+  properties:
+    brandName:
+      type: string
+      title: Brand Name
+    brandSubtitle:
+      type: string
+      title: Brand Subtitle
+    copyrightText:
+      type: string
+      title: Copyright Text
+    headingFontFamily:
+      type: string
+      title: Heading Font Family
+    bodyFontFamily:
+      type: string
+      title: Body Font Family
+    secondaryFontFamily:
+      type: string
+      title: Secondary Font Family
+    brandColor:
+      type: string
+      title: Brand Color
+    subtitleColor:
+      type: string
+      title: Subtitle Color
+    navLinkColor:
+      type: string
+      title: Nav Link Color
+    navLinkHoverColor:
+      type: string
+      title: Nav Link Hover Color
+    copyrightColor:
+      type: string
+      title: Copyright Color
+    backgroundColor:
+      type: string
+      title: Background Color
+    borderColor:
+      type: string
+      title: Border Color
+    navItem1Label:
+      type: string
+      title: Nav Item 1 Label
+    navItem1Href:
+      type: string
+      title: Nav Item 1 Href
+    navItem2Label:
+      type: string
+      title: Nav Item 2 Label
+    navItem2Href:
+      type: string
+      title: Nav Item 2 Href
+    navItem3Label:
+      type: string
+      title: Nav Item 3 Label
+    navItem3Href:
+      type: string
+      title: Nav Item 3 Href
