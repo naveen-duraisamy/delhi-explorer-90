@@ -1168,7 +1168,7 @@ const Download = () => {
               "Generating ZIP…"
             ) : (
               <>
-                <Download size={18} />
+                <DownloadIcon size={18} />
                 Download All Components (.zip)
               </>
             )}
