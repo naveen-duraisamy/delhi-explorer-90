@@ -3,6 +3,7 @@ const Footer = () => {
     { label: "Attractions", href: "#attractions" },
     { label: "Cuisine", href: "#cuisine" },
     { label: "Stories", href: "#stories" },
+    { label: "Connectors", href: "#connectors" },
   ];
 
   return (
