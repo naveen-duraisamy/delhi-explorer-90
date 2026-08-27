@@ -1,73 +1,103 @@
-# Welcome to your Lovable project
+# Nebula
 
-## Project info
+Nebula provides a template repository for
+[`@drupal-canvas/create`](https://www.npmjs.com/package/@drupal-canvas/create)
+to scaffold a new codebase for working with
+[Drupal Canvas Code Components](https://project.pages.drupalcode.org/canvas/code-components).
+The codebase serves as a development environment fully set up with tooling and
+examples for AI-assisted development workflows.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Getting started
 
-## How can I edit this code?
+Instead of cloning this repository, create a new project interactively:
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+npx @drupal-canvas/create@latest
 ```
 
-**Edit a file directly in GitHub**
+## AI-assisted development
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+[Agent skills](https://agentskills.io) are located in `.agents/skills/`.
 
-**Use GitHub Codespaces**
+- `nebula-*` skills provide conventions and workflows specific for this
+  repository.
+- `canvas-*` skills are generic Canvas Code Component component guidance
+  installed from
+  [`drupal-canvas/skills`](https://github.com/drupal-canvas/skills).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Setup
 
-## What technologies are used for this project?
+No setup is required for the following coding agents; they read directly from
+`.agents/skills/`: Amp, Codex, Gemini CLI, GitHub Copilot, Kimi Code CLI,
+OpenCode. (This list can become outdated quickly; by the time you read this,
+additional coding agents may already standardize on this directory.)
 
-This project is built with:
+If your coding agent does not standardize on this directory (for example, Cursor
+or Claude Code), manually symlink the relevant skill from `.agents/skills/`:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# For Claude Code
+ln -s .agents/skills/<skill-name> .claude/skills/<skill-name>
 
-## How can I deploy this project?
+# For Cursor
+ln -s .agents/skills/<skill-name> .cursor/skills/<skill-name>
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Adding new skills
 
-## Can I connect a custom domain to my Lovable project?
+Install new skills from [skills.sh](https://skills.sh). For example:
 
-Yes, you can!
+```bash
+npx skills add vercel-labs/agent-skills
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Updating skills
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Update the Drupal Canvas skills by re-adding and selecting all of them:
+
+```bash
+npx skills add drupal-canvas/skills
+```
+
+Once [vercel-labs/skills#337](https://github.com/vercel-labs/skills/issues/337)
+is resolved, you'll be able to use the `npx skills check` and
+`npx skills update` to check for and apply updates more efficiently.
+
+## Features
+
+- [`@drupal-canvas/cli`](https://www.npmjs.com/package/@drupal-canvas/cli)
+  installed
+  - `.env.example` file with instructions specific to this codebase
+- [`@drupal-canvas/eslint-config`](https://www.npmjs.com/package/@drupal-canvas/eslint-config)
+  configured
+  - Recommended rules are added on top of the required validation for the
+    components to work in Drupal Canvas
+- [Canvas Workbench](https://project.pages.drupalcode.org/canvas/code-components/workbench/)
+  for developing and previewing components locally
+  - React component compilation
+  - [Tailwind CSS](https://tailwindcss.com) styling
+- [Prettier](https://prettier.io/) with plugins configured
+  - [`prettier-plugin-tailwindcss`](https://www.npmjs.com/package/prettier-plugin-tailwindcss)
+  - [`@ianvs/prettier-plugin-sort-imports`](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
+- Pre-commit hook with [Husky](https://typicode.github.io/husky) for linting and
+  formatting staged files using
+  [`lint-staged`](https://www.npmjs.com/package/lint-staged)
+- [GitHub Actions](https://github.com/features/actions) workflows:
+  - Static code checks
+  - Validating PR titles against
+    [the Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0)
+    (delete `.github/workflows/lint-pr.yml` if you don't want this)
+- Example components
+
+## Commands
+
+| Command                          | Description                                                                                       |
+| -------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `npx canvas [command] [options]` | Runs Drupal Canvas CLI commands <br> (`npx canvas` lists available commands)                      |
+| `npm run dev`                    | Starts [Canvas Workbench](https://project.pages.drupalcode.org/canvas/code-components/workbench/) |
+| `npm run code:check`             | Runs all code checks                                                                              |
+| `npm run code:check:prettier`    | Checks code formatting with Prettier                                                              |
+| `npm run code:check:eslint`      | Checks code with ESLint                                                                           |
+| `npm run code:fix`               | Runs all code fixes                                                                               |
+| `npm run code:fix:prettier`      | Fixes code formatting with Prettier                                                               |
+| `npm run code:fix:eslint`        | Fixes code with ESLint                                                                            |
